@@ -1,0 +1,10 @@
+<h1>Update a Skill</h1>
+<%= form_tag "/skills/:id", method: :patch do %>
+  <div>
+    Skill Name: <input type="text" name="skill_name" value="<%= @resume[:first_name] %>">
+  </div>
+  <div>
+    Student ID: <input type="text" name="student_id" value="<%= @resume[:last_name] %>">
+  </div>
+  <input type="submit" value="Update Skill">
+<% end %>

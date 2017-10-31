@@ -1,6 +1,7 @@
 <h1>Im the students page</h1>
 
 <% @students.each do |student| %>
+  <h3><%= student.student_id %></h3>
   <h3><%= student.first_name %></h3>
   <h3><%= student.last_name %></h3>
   <h3><%= student.email %></h3>

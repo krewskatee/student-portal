@@ -1,0 +1,22 @@
+<h1>Update a Experience</h1>
+<%= form_tag "/experiences/:id", method: :patch do %>
+  <div>
+    Start Date: <input type="text" name="start_date" value="<%= @resume[:first_name] %>">
+  </div>
+  <div>
+    End Date: <input type="text" name="end_date" value="<%= @resume[:last_name] %>">
+  </div>
+  <div>
+    Job Title: <input type="text" name="job_title" value="<%= @resume[:email] %>">
+  </div>
+  <div>
+    Company Name: <input type="text" name="company_name" value="<%= @resume[:phone_number] %>">
+  </div>
+  <div>
+    Details: <input type="text" name="details" value="<%= @resume[:short_bio] %>">
+  </div>
+  <div>
+    Student ID: <input type="hidden" name="student_id" value="<%= @resume[:short_bio] %>">
+  </div>
+  <input type="submit" value="Update Experience">
+<% end %>
