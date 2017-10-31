@@ -1,0 +1,19 @@
+<h1>Update a </h1>
+<%= form_tag "/resumes/:id", method: :patch do %>
+  <div>
+    First Name: <input type="text" name="first_name" value="<%= @resume[:first_name] %>">
+  </div>
+  <div>
+    Last Name: <input type="text" name="last_name" value="<%= @resume[:last_name] %>">
+  </div>
+  <div>
+    Email: <input type="text" name="email" value="<%= @resume[:email] %>">
+  </div>
+  <div>
+    Phone Number: <input type="text" name="phone_number" value="<%= @resume[:phone_number] %>">
+  </div>
+  <div>
+    Short Bio: <input type="text" name="short_bio" value="<%= @resume[:short_bio] %>">
+  </div>
+  <input type="submit" value="Update Resume">
+<% end %>
