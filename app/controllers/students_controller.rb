@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
   end
 
   def update
-    Unirest.patch("#{ENV['HOST_NAME']}/api/skills/#{params[:id]}.json", headers: { "Accept" => "application/json" }, parameters: {
+    Unirest.patch("#{ENV['HOST_NAME']}/api/skills/#{params[:id]}.json", headers: { "Accept" => "application/json" }, parameters:
                                                                                                                                   :first_name => params[:first_name],
                                                                                                                                   :last_name => params[:last_name],
                                                                                                                                   :email => params[:email],
