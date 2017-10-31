@@ -1,11 +1,11 @@
 <h1>Im the experiences page</h1>
 
 <% @experiences.each do |experience| %>
-  <h3><%= experience.start_date %></h3>
-  <h3><%= experience.end_date %></h3>
-  <h3><%= experience.job_title %></h3>
-  <h3><%= experience.company_name %></h3>
-  <h3><%= experience.details %></h3>
-  <h3><%= experience.student_id %></h3>
+  <h3><%= experience['start_date'] %></h3>
+  <h3><%= experience['end_date'] %></h3>
+  <h3><%= experience['job_title'] %></h3>
+  <h3><%= experience['company_name'] %></h3>
+  <h3><%= experience['details'] %></h3>
+  <h3><%= experience['student_id'] %></h3>
 <% end %>
 
