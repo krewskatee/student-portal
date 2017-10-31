@@ -1,4 +1,7 @@
 class EducationsController < ApplicationController
+  def index
+    @educations = Unirest.get("#{ ENV['HOST_NAME'] }/api/educations.json").body
+
   def show
     @education = Unirest.get("localhost:3000/api/educations/#{params[:id]}.json").body
   end

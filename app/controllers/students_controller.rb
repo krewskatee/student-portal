@@ -1,14 +1,18 @@
 class StudentsController < ApplicationController
+  def index
+    @students = Unirest.get("#{ ENV['HOST_NAME'] }/api/students.json").body
+  end
 
-    def show
+
+  def show
+    @student = Unirest.get("localhost:3000/api/students/#{params[:id]}.json").body
+  end
+
+  def edit
       @student = Unirest.get("localhost:3000/api/students/#{params[:id]}.json").body
-    end
+  end
 
-    def edit
-      @student = Unirest.get("localhost:3000/api/students/#{params[:id]}.json").body
-    end
-
-    def update
+  def update
     Unirest.patch("#{ENV['HOST_NAME']}/api/skills/#{params[:id]}.json", headers: { "Accept" => "application/json" }, parameters: {
                                                                                                                                   :first_name => params[:first_name],
                                                                                                                                   :last_name => params[:last_name],
@@ -23,5 +27,6 @@ class StudentsController < ApplicationController
                                                                                                                                   :photo => params[:photo]
                                                                                                                                 }).body
 
-    end
+  end
+
 end
