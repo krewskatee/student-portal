@@ -3,7 +3,6 @@ class StudentsController < ApplicationController
     @students = Unirest.get("#{ ENV['HOST_NAME'] }/api/students.json").body
   end
 
-
   def show
     @student = Unirest.get("localhost:3000/api/students/#{params[:id]}.json").body
   end

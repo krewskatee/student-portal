@@ -1,12 +1,11 @@
-# students = Student.all?? do a unirest call??
+students = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v1/students.json").body
 
-# student.each do |student|
+students.each do |student|
 
-#         Users.create!([{ 
-#                                 name: student.full_name,
-#                                 email: student.email,
-#                                 password: student.last_name,
-#                                 password_confirmation: student.last_name
-#                               }])
-# end
+    User.create!([{ 
+                          email: student["email"],
+                          password: student["last_name"].downcase,
+                          password_confirmation: student["last_name"].downcase
+                        }])
+end
 
