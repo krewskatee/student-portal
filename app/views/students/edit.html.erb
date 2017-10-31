@@ -1,0 +1,37 @@
+<h1>Update a Student</h1>
+<%= form_tag "/students/:id", method: :patch do %>
+  <div>
+    First Name: <input type="text" name="first_name" value="<%= @resume[:first_name] %>">
+  </div>
+  <div>
+    Last Name: <input type="text" name="last_name" value="<%= @resume[:last_name] %>">
+  </div>
+  <div>
+    Email: <input type="text" name="email" value="<%= @resume[:last_name] %>">
+  </div>
+  <div>
+    Phone Number: <input type="text" name="phone_number" value="<%= @resume[:last_name] %>">
+  </div>
+  <div>
+    Short Bio: <input type="text" name="short_bio" value="<%= @resume[:last_name] %>">
+  </div>
+  <div>
+    LinkedIn: <input type="text" name="linkedin" value="<%= @resume[:last_name] %>">
+  </div>
+  <div>
+    Twitter: <input type="text" name="twitter" value="<%= @resume[:last_name] %>">
+  </div>
+  <div>
+    Personal Blog: <input type="text" name="personal_blog" value="<%= @resume[:last_name] %>">
+  </div>
+  <div>
+    Online Resume: <input type="text" name="online_resume" value="<%= @resume[:last_name] %>">
+  </div>
+  <div>
+    Github: <input type="text" name="github" value="<%= @resume[:last_name] %>">
+  </div>
+  <div>
+    Photo: <input type="file" name="photo" value="<%= @resume[:last_name] %>">
+  </div>
+  <input type="submit" value="Update Student">
+<% end %>
