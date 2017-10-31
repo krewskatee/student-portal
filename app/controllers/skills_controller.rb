@@ -1,7 +1,7 @@
 class SkillsController < ApplicationController
 
   def index
-    @skills = Unirest.get("#{ ENV['HOST_NAME'] }/api/skills.json").body
+    @skills = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v1/students.json").body
 
 
   def show
