@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+  get '/users/:id/edit' => 'users#edit'
+  patch '/users/:id' => 'users#update'
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
   get '/students/:id' => 'students#show'
   get '/students/:id/edit' => 'students#edit'
   patch '/students/:id' => 'students#update'
@@ -19,5 +28,6 @@ Rails.application.routes.draw do
   get '/skills/:id' => 'skills#show'
   get '/skills/:id/edit' => 'skills#edit'
   patch '/skills/:id' => 'skills#update'
+
 
 end
