@@ -31,6 +31,7 @@ class StudentsController < ApplicationController
                                                                                                                                   photo: params[:photo],
                                                                                                                                   id: params[:id]
                                                                                                                                 })
+      
     end
 
 
