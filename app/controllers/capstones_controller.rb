@@ -1,5 +1,9 @@
 class CapstonesController < ApplicationController
 
+  def index
+    @capstones = Unirest.get("#{ ENV['HOST_NAME'] }/api/capstones.json").body
+  end
+
   def show
     @capstone = Unirest.get("localhost:3000/api/capstones/#{params[:id]}.json").body
   end

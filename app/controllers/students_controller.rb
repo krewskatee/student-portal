@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+
   HEADERS = {'X-User-Email' => ENV['API_EMAIL'], 'Authorization' => "Token token=#{ENV['API_KEY']}", "Accept" => "application/json" }
 
     def show
@@ -30,5 +31,6 @@ class StudentsController < ApplicationController
                                                                                                                                   id: params[:id]
                                                                                                                                 })
     end
+
 
 end

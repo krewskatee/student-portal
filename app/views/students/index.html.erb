@@ -1,0 +1,18 @@
+<h1>Im the students page</h1>
+
+<% @students.each do |student| %>
+  <h3><%= student.student_id %></h3>
+  <h3><%= student.first_name %></h3>
+  <h3><%= student.last_name %></h3>
+  <h3><%= student.email %></h3>
+  <h3><%= student.phone_number %></h3>
+  <h3><%= student.short_bio %></h3>
+  <h3><%= student.linkedin %></h3>
+  <h3><%= student.twitter %></h3>
+  <h3><%= student.personal_blog %></h3>
+  <h3><%= student.online_resume %></h3>
+  <h3><%= student.github %></h3>
+  <h3><%= student.photo %></h3>
+<% end %>
+
+
