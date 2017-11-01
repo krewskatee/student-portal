@@ -21,7 +21,8 @@ class EducationsController < ApplicationController
                                                                                                             :degree => params[:degree],
                                                                                                             :university => params[:university],
                                                                                                             :details => params[:details],
-                                                                                                            :student_id => params[:student_id]
+                                                                                                            :student_id => params[:student_id],
+                                                                                                            :id => params[:id]
                                                                                                           })
     redirect_to "/educations"
   end
