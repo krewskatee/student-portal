@@ -3,11 +3,11 @@ class StudentsController < ApplicationController
   HEADERS = {'X-User-Email' => ENV['API_EMAIL'], 'Authorization' => "Token token=#{ENV['API_KEY']}", "Accept" => "application/json" }
 
   def index
-    @students = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v1/students.json").body
+    @students = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v2/students.json").body
   end
 
   def show
-    @student = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v1/students/#{params[:id]}.json", headers: HEADERS).body
+    @student = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v2/students/#{params[:id]}.json", headers: HEADERS).body
     @educations = @student['educations']
     @skills = @student['skills']
     @experiences = @student['experiences']
@@ -15,12 +15,12 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    @student = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v1/students/#{params[:id]}.json", headers: HEADERS).body
+    @student = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v2/students/#{params[:id]}.json", headers: HEADERS).body
   end
 
   def update
 
-    Unirest.patch("https://crypto-currents-squidshack.herokuapp.com/api/v1/students/#{params[:id]}.json", headers: HEADERS, parameters: {
+    Unirest.patch("https://crypto-currents-squidshack.herokuapp.com/api/v2/students/#{params[:id]}.json", headers: HEADERS, parameters: {
                                                                                                                                 first_name: params[:first_name],
                                                                                                                                 last_name: params[:last_name],
                                                                                                                                 email: params[:email],
