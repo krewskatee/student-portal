@@ -24,9 +24,10 @@ Rails.application.routes.draw do
   patch '/experiences/:id' => 'experiences#update'
 
   get '/educations' => 'educations#index'
-  get '/education/:id' => 'education#show'
-  get '/education/:id/edit' => 'education#edit'
-  patch '/education/:id' => 'education#update'
+
+  get '/educations/:id' => 'educations#show'
+  get '/educations/:id/edit' => 'educations#edit'
+  patch '/educations/:id' => 'educations#update'
 
   get '/skills' => 'skills#index'
   get '/skills/:id' => 'skills#show'
