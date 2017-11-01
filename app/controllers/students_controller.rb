@@ -2,8 +2,10 @@ class StudentsController < ApplicationController
 
   HEADERS = {'X-User-Email' => ENV['API_EMAIL'], 'Authorization' => "Token token=#{ENV['API_KEY']}", "Accept" => "application/json" }
 
+
+
   def index
-    @students = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v1/students.json").body
+    @students = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v1/students.json", headers: HEADERS).body
   end
 
   def show
