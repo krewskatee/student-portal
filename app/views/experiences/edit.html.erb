@@ -1,22 +1,28 @@
-<h1>Update a Experience</h1>
-<%= form_tag "/experiences/:id", method: :patch do %>
+<h1>Update an Experience</h1>
+<%= form_tag "/experiences/#{params[:id]}", method: :patch do %>
   <div>
-    Start Date: <input type="text" name="start_date" value="<%= @resume[:first_name] %>">
+    First Name: <%= @experience['student_first_name'] %>
+  </div>
+    <div>
+    Last Name: <%= @experience['student_last_name'] %>
+  </div>
+   <div>
+    Student ID: <%= @experience['student_id'] %>
   </div>
   <div>
-    End Date: <input type="text" name="end_date" value="<%= @resume[:last_name] %>">
+    Start Date: <input type="text" name="start_date" value="<%= @experience['start_date'] %>">
   </div>
   <div>
-    Job Title: <input type="text" name="job_title" value="<%= @resume[:email] %>">
+    End Date: <input type="text" name="end_date" value="<%= @experience['end_date'] %>">
   </div>
   <div>
-    Company Name: <input type="text" name="company_name" value="<%= @resume[:phone_number] %>">
+    Job Title: <input type="text" name="job_title" value="<%= @experience['job_title'] %>">
   </div>
   <div>
-    Details: <input type="text" name="details" value="<%= @resume[:short_bio] %>">
+    Company Name: <input type="text" name="company_name" value="<%= @experience['company_name'] %>">
   </div>
   <div>
-    Student ID: <input type="hidden" name="student_id" value="<%= @resume[:short_bio] %>">
+    Details: <input type="text" name="details" value="<%= @experience['details'] %>">
   </div>
   <input type="submit" value="Update Experience">
 <% end %>
