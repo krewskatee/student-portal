@@ -1,37 +1,38 @@
 <h1>Update a Student</h1>
-<%= form_tag "/students/:id", method: :patch do %>
+<%= form_tag "/students/#{params[:id]}", method: :patch do %>
+  <input type="hidden" name="id" value="<%= @student['id'] %>"></input>
   <div>
-    First Name: <input type="text" name="first_name" value="<%= @resume[:first_name] %>">
+    First Name: <input type="text" name="first_name" value="<%= @student['first_name'] %>">
   </div>
   <div>
-    Last Name: <input type="text" name="last_name" value="<%= @resume[:last_name] %>">
+    Last Name: <input type="text" name="last_name" value="<%= @student['last_name'] %>">
   </div>
   <div>
-    Email: <input type="text" name="email" value="<%= @resume[:last_name] %>">
+    Email: <input type="text" name="email" value="<%= @student['email'] %>">
   </div>
   <div>
-    Phone Number: <input type="text" name="phone_number" value="<%= @resume[:last_name] %>">
+    Phone Number: <input type="text" name="phone_number" value="<%= @student['phone_number'] %>">
   </div>
   <div>
-    Short Bio: <input type="text" name="short_bio" value="<%= @resume[:last_name] %>">
+    Short Bio: <input type="text" name="short_bio" value="<%= @student['short_bio'] %>">
   </div>
   <div>
-    LinkedIn: <input type="text" name="linkedin" value="<%= @resume[:last_name] %>">
+    LinkedIn: <input type="text" name="linkedin" value="<%= @student['linkedin'] %>">
   </div>
   <div>
-    Twitter: <input type="text" name="twitter" value="<%= @resume[:last_name] %>">
+    Twitter: <input type="text" name="twitter" value="<%= @student['twitter'] %>">
   </div>
   <div>
-    Personal Blog: <input type="text" name="personal_blog" value="<%= @resume[:last_name] %>">
+    Personal Blog: <input type="text" name="personal_blog" value="<%= @student['personal_blog'] %>">
   </div>
   <div>
-    Online Resume: <input type="text" name="online_resume" value="<%= @resume[:last_name] %>">
+    Online Resume: <input type="text" name="online_resume" value="<%= @student['online_resume'] %>">
   </div>
   <div>
-    Github: <input type="text" name="github" value="<%= @resume[:last_name] %>">
+    Github: <input type="text" name="github" value="<%= @student['github'] %>">
   </div>
   <div>
-    Photo: <input type="file" name="photo" value="<%= @resume[:last_name] %>">
+    Photo: <input type="file" name="photo" value="<%= @student['photo'] %>">
   </div>
   <input type="submit" value="Update Student">
 <% end %>
