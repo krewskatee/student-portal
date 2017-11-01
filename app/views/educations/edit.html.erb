@@ -1,5 +1,5 @@
 <h1>Update a Education</h1>
-<%= form_tag "/educations/:id", method: :patch do %>
+<%= form_tag "/educations/#{params[:id]}", method: :patch do %>
   <div>
     Start Date: <input type="text" name="start_date" value="<%= @education['start_date'] %>">
   </div>
@@ -16,6 +16,5 @@
     Details: <input type="text" name="details" value="<%= @education['details'] %>">
   </div>
   <input type="hidden" name="student_id" value="<%= @education['student_id'] %>">
-  <input type="hidden" name="id" value="<%= @education['id'] %>">
   <input type="submit" value="Update Education">
 <% end %>
