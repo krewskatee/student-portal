@@ -1,0 +1,28 @@
+
+  <h2><%= @student['first_name'] %> <%= @student['last_name'] %></h2>
+
+  <h5>Email: <%= @student['email'] %></h5>
+  <h5>Phone Number: <%= @student['phone_number'] %></h5>
+  <h5>Short Bio: <%= @student['short_bio'] %></h5>
+  <h5>LinkedIn: <%= @student['linkedin'] %></h5>
+  <h5>Twitter: <%= @student['twitter'] %></h5>
+  <h5>Personal Blog: <%= @student['personal_blog'] %></h5>
+  <h5>Online Resume: <%= @student['online_resume'] %></h5>
+  <h5>Github: <%= @student['github'] %></h5>
+  <h5><img src="<%= @student['photo'] %>"></img></h5>
+
+  <h2>Skills</h2>
+  <% @skills.each do |skill| %>
+    <ul>
+      <li><%= skill['skill_name'] %></li>
+    </ul>
+  <% end %>
+
+  <h2>Education</h2>
+  <% @educations.each do |education| %>
+    <h5>Start Date: <%= education['start_date'] %></h5>
+    <h5>End Date: <%= education['end_date'] %></h5>
+    <h5>Degree: <%= education['degree'] %></h5>
+    <h5>University: <%= education['university'] %></h5>
+    <h5>Details: <%= education['details'] %></h5>
+  <% end %>
