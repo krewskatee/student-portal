@@ -1,6 +1,7 @@
 class EducationsController < ApplicationController
   def index
     @educations = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v1/students.json").body
+  end
 
   def show
     @education = Unirest.get("localhost:3000/api/educations/#{params[:id]}.json").body
@@ -12,13 +13,14 @@ class EducationsController < ApplicationController
 
   def update
     Unirest.patch("#{ENV['HOST_NAME']}/api/educations/#{params[:id]}.json", headers: { "Accept" => "application/json" }, parameters: {
-                                                                                                                                        :start_date => params[:start_date],
-                                                                                                                                        :end_date => params[:end_date],
-                                                                                                                                        :degree => params[:degree],
-                                                                                                                                        :university => params[:university],
-                                                                                                                                        :details => params[:details],
-                                                                                                                                        :student_id => params[:student_id]
-                                                                                                                                      }).body
+      :start_date => params[:start_date],
+      :end_date => params[:end_date],
+      :degree => params[:degree],
+      :university => params[:university],
+      :details => params[:details],
+      :student_id => params[:student_id]
+    }).body
+
     redirect_to "/"
   end
 end

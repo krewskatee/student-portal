@@ -2,6 +2,7 @@ class SkillsController < ApplicationController
 
   def index
     @skills = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v1/students.json").body
+  end
 
 
   def show

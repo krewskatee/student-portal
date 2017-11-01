@@ -8,27 +8,27 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  get '/' => 'students#index'
+  get '/students' => 'students#index'
   get '/students/:id' => 'students#show'
   get '/students/:id/edit' => 'students#edit'
   patch '/students/:id' => 'students#update'
 
-  get '/' => 'capstones#index'
+  get '/capstones' => 'capstones#index'
   get '/capstones/:id' => 'capstones#show'
   get '/capstones/:id/edit' => 'capstones#edit'
   patch '/capstones/:id' => 'capstones#update'
 
-  get '/' => 'experiences#index'
+  get '/experiences' => 'experiences#index'
   get '/experiences/:id' => 'experiences#show'
   get '/experiences/:id/edit' => 'experiences#edit'
   patch '/experiences/:id' => 'experiences#update'
 
-  get '/' => 'educations#index'
+  get '/educations' => 'educations#index'
   get '/education/:id' => 'education#show'
   get '/education/:id/edit' => 'education#edit'
   patch '/education/:id' => 'education#update'
 
-  get '/' => 'skills#index'
+  get '/skills' => 'skills#index'
   get '/skills/:id' => 'skills#show'
   get '/skills/:id/edit' => 'skills#edit'
   patch '/skills/:id' => 'skills#update'
