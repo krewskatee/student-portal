@@ -1,10 +1,10 @@
-<h1>Im the educations page </h1>
+<h1>Educations</h1>
 
 <% @educations.each do |education| %>
-  <h3><%= education.start_date %></h3>
-  <h3><%= education.end_date %></h3>
-  <h3><%= education.degree %></h3>
-  <h3><%= education.university %></h3>
-  <h3><%= education.details %></h3>
-  <h3><%= education.student_id %></h3>
+  <h2>Education</h2>
+  <h5>Start Date: <%= education['start_date'] %></h5>
+  <h5>End Date: <%= education['end_date'] %></h5>
+  <h5>Degree: <%= education['degree'] %></h5>
+  <h5>University: <%= education['university'] %></h5>
+  <h5>Details: <%= education['details'] %></h5>
 <% end %>

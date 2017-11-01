@@ -31,6 +31,6 @@ class StudentsController < ApplicationController
                                                                                                                                   id: params[:id]
                                                                                                                                 })
     end
-
+    redirect_to "/students/#{params[:id]}"
 
 end
