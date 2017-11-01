@@ -14,6 +14,7 @@ class EducationsController < ApplicationController
   end
 
   def update
+
     Unirest.patch("https://crypto-currents-squidshack.herokuapp.com/api/v1/educations/#{params[:id]}.json", headers: HEADERS, parameters: {
                                                                                                             :start_date => params[:start_date],
                                                                                                             :end_date => params[:end_date],
