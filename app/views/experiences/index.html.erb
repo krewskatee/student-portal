@@ -1,6 +1,7 @@
 <h2>Experiences:</h2>
 
 <% @experiences.each do |experience| %>
+
   <h5>Student Name: <%= experience['student_first_name'] %> <%= experience['student_last_name'] %></h5>
   <h5>Start date: <%= experience['start_date'] %></h5>
   <h5>End date: <%= experience['end_date'] %></h5>
@@ -8,5 +9,6 @@
   <h5>Company name: <%= experience['company_name'] %></h5>
   <h5>Details: <%= experience['details'] %></h5>
   <br>
+
 <% end %>
 

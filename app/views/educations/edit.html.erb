@@ -1,22 +1,21 @@
 <h1>Update a Education</h1>
 <%= form_tag "/educations/:id", method: :patch do %>
   <div>
-    Start Date: <input type="text" name="start_date" value="<%= @resume[:first_name] %>">
+    Start Date: <input type="text" name="start_date" value="<%= @education['start_date'] %>">
   </div>
   <div>
-    End Date: <input type="text" name="end_date" value="<%= @resume[:last_name] %>">
+    End Date: <input type="text" name="end_date" value="<%= @education['end_date'] %>">
   </div>
   <div>
-    Degree: <input type="text" name="degree" value="<%= @resume[:email] %>">
+    Degree: <input type="text" name="degree" value="<%= @education['degree'] %>">
   </div>
   <div>
-    University: <input type="text" name="university" value="<%= @resume[:phone_number] %>">
+    University: <input type="text" name="university" value="<%= @education['university'] %>">
   </div>
   <div>
-    Details: <input type="text" name="details" value="<%= @resume[:short_bio] %>">
+    Details: <input type="text" name="details" value="<%= @education['details'] %>">
   </div>
-  <div>
-    Student ID: <input type="hidden" name="student_id" value="<%= @resume[:short_bio] %>">
-  </div>
+  <input type="hidden" name="student_id" value="<%= @education['student_id'] %>">
+  <input type="hidden" name="id" value="<%= @education['id'] %>">
   <input type="submit" value="Update Education">
 <% end %>

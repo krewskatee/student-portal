@@ -1,20 +1,21 @@
 class CapstonesController < ApplicationController
+  HEADERS = {'X-User-Email' => ENV['API_EMAIL'], 'Authorization' => "Token token=#{ENV['API_KEY']}", "Accept" => "application/json" }
 
   def index
-    @capstones = Unirest.get("#{ ENV['HOST_NAME'] }/api/capstones.json").body
+    @capstones = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v1/capstones.json", headers: HEADERS).body
   end
 
   def show
-    @capstone = Unirest.get("localhost:3000/api/capstones/#{params[:id]}.json").body
+    @capstone = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v1/capstones/#{params[:id]}.json", headers: HEADERS).body
   end
 
   def edit
-    @capstone = Unirest.get("localhost:3000/api/capstones/#{params[:id]}.json").body
+    @capstone = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v1/capstones/#{params[:id]}.json", headers: HEADERS).body
   end
 
   def update
-    Unirest.patch("#{ENV['HOST_NAME']}/api/captones/#{params[:id]}.json", headers: { "Accept" => "application/json" }, parameters: {:name => params[:name], :description => params[:description], :url => params[:url], :screenshot => params[:screenshot], :student_id => params[:student_id]}).body
-    redirect_to "/"
+    Unirest.patch("https://crypto-currents-squidshack.herokuapp.com/api/v1/capstones/#{params[:id]}.json", headers: HEADERS, parameters: {:name => params[:name], :description => params[:description], :url => params[:url], :screenshot => params[:screenshot], :student_id => params[:student_id]}).body
+    redirect_to "/capstones"
   end
 
 end

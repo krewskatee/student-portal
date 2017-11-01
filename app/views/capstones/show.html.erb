@@ -1,19 +1,20 @@
-<h1>Update a </h1>
-<%= form_tag "/resumes/:id", method: :patch do %>
+<h1>Capstone</h1>
+
+<%= form_tag "/capstones/:id", method: :patch do %>
   <div>
-    First Name: <input type="text" name="first_name" value="<%= @resume[:first_name] %>">
+    Name: <input type="text" name="name" value="<%= @capstone['name'] %>">
   </div>
   <div>
-    Last Name: <input type="text" name="last_name" value="<%= @resume[:last_name] %>">
+   Description: <input type="text" name="description" value="<%= @capstone['description'] %>">
   </div>
   <div>
-    Email: <input type="text" name="email" value="<%= @resume[:email] %>">
+    Email: <input type="text" name="email" value="<%= @capstone['url'] %>">
   </div>
   <div>
-    Phone Number: <input type="text" name="phone_number" value="<%= @resume[:phone_number] %>">
+    Screenshot: <input type="text" name="screenshot" value="<%= @capstone['screenshot'] %>">
   </div>
   <div>
-    Short Bio: <input type="text" name="short_bio" value="<%= @resume[:short_bio] %>">
+    Student: <input type="text" name="student_id" value="<%= @capstone['student_id'] %>">
   </div>
-  <input type="submit" value="Update Resume">
+  <input type="submit" value="Update Capstone">
 <% end %>

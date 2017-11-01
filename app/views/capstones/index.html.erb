@@ -1,11 +1,11 @@
 <h1>Im the capstones page</h1>
 
 <% @capstones.each do |capstone| %>
-  <h3><%= capstone.name %></h3>
-  <h3><%= capstone.description %></h3>
-  <h3><%= capstone.url %></h3>
-  <h3><%= capstone.screenshot %></h3>
-  <h3><%= capstone.student_id %></h3>
+  <h3><%= capstone['name'] %></h3>
+  <h3><%= capstone['description'] %></h3>
+  <h3><%= capstone['url'] %></h3>
+  <h3><%= capstone['screenshot'] %></h3>
+  <h3><%= capstone['student_id'] %></h3>
 <% end %>
 
 
