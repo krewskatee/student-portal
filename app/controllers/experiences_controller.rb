@@ -1,6 +1,6 @@
 class ExperiencesController < ApplicationController
   def index
-    @experiences = Unirest.get("#{ ENV['HOST_NAME'] }/api/experiences.json").body
+    @experiences = Unirest.get("https://crypto-currents-squidshack.herokuapp.com/api/v1/students.json").body
   end
 
   def show
@@ -12,12 +12,17 @@ class ExperiencesController < ApplicationController
   end
 
   def update
-    Unirest.patch("#{ENV['HOST_NAME']}/api/experiences/#{params[:id]}.json", headers: { "Accept" => "application/json" }, parameters: {
-                                                                                                                                        :start_date => params[:start_date],
-                                                                                                                                        :end_date => params[:end_date],
-                                                                                                                                        :job_title => params[:job_title],
-                                                                                                                                        :company_name => params[:company_name],
-                                                                                                                                        :details => params[:details],
-                                                                                                                                        :student_id => params[:student_id]
-    end                                                                                                                                  }).body
+    Unirest.patch("#{ENV['HOST_NAME']}/api/educations/#{params[:id]}.json", headers: { "Accept" => "application/json" }, 
+
+      parameters: 
+                  {
+                  :start_date => params[:start_date],
+                  :end_date => params[:end_date],
+                  :job_title => params[:job_title],
+                  :company_name => params[:company_name],
+                  :details => params[:details],
+                  :student_id => params[:student_id]
+                  }).body
+  end
 end
+
